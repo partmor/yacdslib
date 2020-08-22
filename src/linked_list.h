@@ -1,4 +1,4 @@
-#ifndef CDS_LINKED_LIST_H
+#ifndef yacdslib_LINKED_LIST_H
 
 typedef struct node {
     int val;
@@ -7,5 +7,5 @@ typedef struct node {
 
 node_t* create_head(int val);
 
-#define CDS_LINKED_LIST_H
-#endif //CDS_LINKED_LIST_H
+#define yacdslib_LINKED_LIST_H
+#endif //yacdslib_LINKED_LIST_H
