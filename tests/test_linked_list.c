@@ -2,8 +2,11 @@
 #include <check.h>
 #include "../src/linked_list.h"
 
-START_TEST(test_dummy){
-    ck_assert_int_eq(dummy(), 1337);
+START_TEST(test_create_head){
+    node_t* head = create_head(1);
+    ck_assert_ptr_nonnull(head);
+    ck_assert_int_eq(head->val, 1);
+    ck_assert_ptr_null(head->next);
 }
 END_TEST
 
@@ -17,7 +20,7 @@ Suite* make_linked_list_suite(void)
     /* Core test case */
     tc_core = tcase_create("Core");
 
-    tcase_add_test(tc_core, test_dummy);
+    tcase_add_test(tc_core, test_create_head);
     suite_add_tcase(s, tc_core);
 
     return s;

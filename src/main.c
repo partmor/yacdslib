@@ -5,7 +5,5 @@
 
 int main() {
     printf("Hello, World!\n");
-    int val = dummy();
-    printf("%i", val);
     return 0;
 }

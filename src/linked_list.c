@@ -1,9 +1,10 @@
-//
-// Created by partmor on 22/08/2020.
-//
-
+#include <stdlib.h>
 #include "linked_list.h"
 
-int dummy(){
-    return 1337;
+
+node_t* create_head(int val){
+    node_t* head = malloc(sizeof(node_t));
+    head->val = val;
+    head->next = NULL;
+    return head;
 }
