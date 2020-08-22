@@ -10,5 +10,5 @@ to creating a reasonable API and writing automated unit tests.
 And what a better way to do that than by implementing a bunch of beloved data structures
 like linked lists, dynamic arrays, hash maps, and so on.
 
-If don't guarantee an absence of poor design decisions, lack of idiomatic taste and 
+I don't guarantee a total absence of poor design decisions, lack of idiomatic taste or 
 other reprehensible flaws; but who cares, it's about the journey.
