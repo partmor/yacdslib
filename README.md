@@ -12,3 +12,19 @@ like linked lists, dynamic arrays, hash maps, and so on.
 
 I don't guarantee a total absence of poor design decisions, lack of idiomatic taste or 
 other reprehensible flaws; but who cares, it's about the journey.
+
+## Building
+
+From the root of the repo:
+
+```
+mkdir build && cd build # create dir for build outputs
+cmake .. # generate configs (from within build/ dir)
+make # build
+make test # run unit tests
+```
+
+### Dependencies
+
++ CMake
++ [Check](https://github.com/libcheck/check) (unit-testing framework)
