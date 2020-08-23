@@ -77,6 +77,13 @@ START_TEST(test_size_null){
 }
 END_TEST
 
+START_TEST(test_get_pos){
+    int arr[5] = {0, 1, 2, 3, 4};
+    node_t* head = create_list_from_array(arr, 5);
+    ck_assert_int_eq(get_node(head, 2)->val, 2);
+}
+END_TEST
+
 Suite* make_linked_list_suite(void)
 {
     Suite *s;
@@ -93,6 +100,7 @@ Suite* make_linked_list_suite(void)
     tcase_add_test(tc_core, test_push_front);
     tcase_add_test(tc_core, test_size);
     tcase_add_test(tc_core, test_size_null);
+    tcase_add_test(tc_core, test_get_pos);
 
     suite_add_tcase(s, tc_core);
 

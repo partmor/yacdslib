@@ -43,3 +43,11 @@ int size(node_t* head){
     }
     return count;
 }
+
+node_t* get_node(node_t* head, size_t pos){
+    node_t* node = head;
+    for (size_t i = 0; i < pos; ++i) {
+        node = node->next;
+    }
+    return node;
+}
