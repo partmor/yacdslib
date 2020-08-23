@@ -71,12 +71,6 @@ START_TEST(test_size){
 }
 END_TEST
 
-START_TEST(test_size_null){
-    node_t* head; // non-initialized list should have zero-length
-    ck_assert_int_eq(size(head), 0);
-}
-END_TEST
-
 START_TEST(test_get_pos){
     int arr[5] = {0, 1, 2, 3, 4};
     node_t* head = create_list_from_array(arr, 5);
@@ -108,7 +102,6 @@ Suite* make_linked_list_suite(void)
     tcase_add_test(tc_core, test_create_from_array);
     tcase_add_test(tc_core, test_push_front);
     tcase_add_test(tc_core, test_size);
-    tcase_add_test(tc_core, test_size_null);
     tcase_add_test(tc_core, test_get_pos);
     tcase_add_test(tc_core, test_peek_last);
 
