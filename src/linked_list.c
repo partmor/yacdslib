@@ -33,3 +33,13 @@ node_t* create_list_from_array(int arr[], size_t arr_size){
     }
     return head;
 }
+
+int size(node_t* head){
+    int count = 0;
+    node_t* node = head;
+    while (node){
+        node = node->next;
+        ++count;
+    }
+    return count;
+}

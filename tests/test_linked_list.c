@@ -63,6 +63,20 @@ START_TEST(test_push_front){
 }
 END_TEST
 
+START_TEST(test_size){
+    /* Create a 3-node list: 1 -> 2 -> 3 */
+    int arr[3] = {1, 2, 3};
+    node_t* head = create_list_from_array(arr, 3);
+    ck_assert_int_eq(size(head), 3);
+}
+END_TEST
+
+START_TEST(test_size_null){
+    node_t* head; // non-initialized list should have zero-length
+    ck_assert_int_eq(size(head), 0);
+}
+END_TEST
+
 Suite* make_linked_list_suite(void)
 {
     Suite *s;
@@ -77,6 +91,9 @@ Suite* make_linked_list_suite(void)
     tcase_add_test(tc_core, test_push_back);
     tcase_add_test(tc_core, test_create_from_array);
     tcase_add_test(tc_core, test_push_front);
+    tcase_add_test(tc_core, test_size);
+    tcase_add_test(tc_core, test_size_null);
+
     suite_add_tcase(s, tc_core);
 
     return s;
