@@ -10,7 +10,8 @@ find_package(Check REQUIRED)
 include_directories(${CHECK_INCLUDE_DIRS})
 link_directories(${CHECK_LIBRARY_DIRS})
 
-set(TEST_SOURCES test_linked_list.c)
+set(TEST_SOURCES
+        test_linked_list.c)
 
 add_executable(test_ds ${TEST_SOURCES})
-target_link_libraries(test_ds linked_list ${CHECK_LIBRARIES})
+target_link_libraries(test_ds yacdslib ${CHECK_LIBRARIES})
