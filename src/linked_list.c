@@ -51,3 +51,11 @@ node_t* get_node(node_t* head, size_t pos){
     }
     return node;
 }
+
+node_t* peek_last(node_t* head){
+    node_t* node = head;
+    while (node->next){
+        node = node->next;
+    }
+    return node;
+}
