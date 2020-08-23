@@ -80,14 +80,16 @@ END_TEST
 START_TEST(test_get_pos){
     int arr[5] = {0, 1, 2, 3, 4};
     node_t* head = create_list_from_array(arr, 5);
-    ck_assert_int_eq(get_node(head, 2)->val, 2);
+    node_t* node = get_node(head, 2);
+    ck_assert_int_eq(node->val, 2);
 }
 END_TEST
 
 START_TEST(test_peek_last){
     int arr[5] = {0, 1, 2, 3, 4};
     node_t* head = create_list_from_array(arr, 5);
-    ck_assert_int_eq(peek_last(head)->val, 4);
+    node_t* node = peek_last(head);
+    ck_assert_int_eq(node->val, 4);
 }
 END_TEST
 
