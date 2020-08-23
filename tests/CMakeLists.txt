@@ -15,3 +15,4 @@ set(TEST_SOURCES
 
 add_executable(test_ds ${TEST_SOURCES})
 target_link_libraries(test_ds yacdslib ${CHECK_LIBRARIES})
+add_test(NAME test_ds COMMAND test_ds)
