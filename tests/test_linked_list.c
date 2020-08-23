@@ -10,11 +10,11 @@ START_TEST(test_create_node){
 }
 END_TEST
 
-START_TEST(test_push){
+START_TEST(test_push_back){
     /* Create a 3-node list: 1 -> 2 -> 3 */
     node_t* head = create_node(1);
-    push(head, 2);
-    push(head, 3);
+    push_back(head, 2);
+    push_back(head, 3);
 
     /* Traverse the list and finally check the last node point's next
      * points to NULL */
@@ -43,6 +43,26 @@ START_TEST(test_create_from_array){
 }
 END_TEST
 
+START_TEST(test_push_front){
+    /* Create a 3-node list: 1 -> 2 -> 3 */
+    int arr[3] = {1, 2, 3};
+    node_t* head = create_list_from_array(arr, 3);
+
+    /* Push a node to the front and retrieve new head
+     * the sequence should now be 0 -> 1 -> 2 -> 3 */
+    head = push_front(head, 0);
+
+    /* Traverse the list and finally check the last node point's next
+     * points to NULL */
+    node_t* node = head;
+    for(size_t i = 0; i <= 3; ++i){
+        ck_assert_int_eq(node->val, i);
+        node = node->next;
+    }
+    ck_assert_ptr_null(node);
+}
+END_TEST
+
 Suite* make_linked_list_suite(void)
 {
     Suite *s;
@@ -54,8 +74,9 @@ Suite* make_linked_list_suite(void)
     tc_core = tcase_create("Core");
 
     tcase_add_test(tc_core, test_create_node);
-    tcase_add_test(tc_core, test_push);
+    tcase_add_test(tc_core, test_push_back);
     tcase_add_test(tc_core, test_create_from_array);
+    tcase_add_test(tc_core, test_push_front);
     suite_add_tcase(s, tc_core);
 
     return s;
