@@ -16,3 +16,14 @@ void push(node_t* head, int val){
     }
     node->next = create_node(val);
 }
+
+node_t* create_list_from_array(int arr[], size_t arr_size){
+    node_t* head = NULL;
+    if(arr_size){
+        head = create_node(arr[0]);
+        for(size_t i = 1; i < arr_size; ++i){
+            push(head, arr[i]);
+        }
+    }
+    return head;
+}
