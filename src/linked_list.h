@@ -1,4 +1,4 @@
-#ifndef yacdslib_LINKED_LIST_H
+#ifndef YACDSLIB_LINKED_LIST_H
 
 typedef struct node {
     int val;
@@ -13,5 +13,5 @@ int size(node_t* head);
 node_t* get_node(node_t* head, size_t pos);
 node_t* peek_last(node_t* head);
 
-#define yacdslib_LINKED_LIST_H
-#endif //yacdslib_LINKED_LIST_H
+#define YACDSLIB_LINKED_LIST_H
+#endif //YACDSLIB_LINKED_LIST_H
