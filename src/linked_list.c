@@ -9,11 +9,16 @@ node_t* create_node(int val){
     return head;
 }
 
-void push_back(node_t* head, int val){
+node_t* peek_last(node_t* head){
     node_t* node = head;
-    while(node->next){
+    while (node->next){
         node = node->next;
     }
+    return node;
+}
+
+void push_back(node_t* head, int val){
+    node_t* node = peek_last(head);
     node->next = create_node(val);
 }
 
@@ -47,14 +52,6 @@ int size(node_t* head){
 node_t* get_node(node_t* head, size_t pos){
     node_t* node = head;
     for (size_t i = 0; i < pos; ++i) {
-        node = node->next;
-    }
-    return node;
-}
-
-node_t* peek_last(node_t* head){
-    node_t* node = head;
-    while (node->next){
         node = node->next;
     }
     return node;
