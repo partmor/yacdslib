@@ -87,6 +87,13 @@ START_TEST(test_peek_last){
 }
 END_TEST
 
+START_TEST(test_free_list_no_errors){
+    int arr[5] = {0, 1, 2, 3, 4};
+    node_t* head = create_list_from_array(arr, 5);
+    free_linked_list(head);
+}
+END_TEST
+
 Suite* make_linked_list_suite(void)
 {
     Suite *s;
@@ -104,6 +111,7 @@ Suite* make_linked_list_suite(void)
     tcase_add_test(tc_core, test_size);
     tcase_add_test(tc_core, test_get_pos);
     tcase_add_test(tc_core, test_peek_last);
+    tcase_add_test(tc_core, test_free_list_no_errors);
 
     suite_add_tcase(s, tc_core);
 
