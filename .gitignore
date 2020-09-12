@@ -54,3 +54,6 @@ dkms.conf
 # IDEs
 .idea/
 cmake-build-debug/
+
+# macOS
+.DS_Store
