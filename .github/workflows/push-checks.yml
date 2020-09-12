@@ -62,7 +62,7 @@ jobs:
         working-directory: ./build
 
   deploy-docs:
-    if: github.ref == 'refs/heads/doxygen-docs'
+    if: github.ref == 'refs/heads/master'
     needs: [unit-tests-linux, unit-tests-macos]
     runs-on: ubuntu-latest
     steps:
