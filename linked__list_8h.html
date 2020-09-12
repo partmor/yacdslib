@@ -98,8 +98,8 @@ Functions</h2></td></tr>
 <tr class="memitem:ab59346b047e534df51dd14354809b36a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linked__list_8h.html#ab59346b047e534df51dd14354809b36a">list_init</a> (<a class="el" href="structlist__t.html">list_t</a> *list_ptr)</td></tr>
 <tr class="memdesc:ab59346b047e534df51dd14354809b36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize empty list.  <a href="linked__list_8h.html#ab59346b047e534df51dd14354809b36a">More...</a><br /></td></tr>
 <tr class="separator:ab59346b047e534df51dd14354809b36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc3eddaf4e8e5d03940caec8ec33505a"><td class="memItemLeft" align="right" valign="top"><a id="adc3eddaf4e8e5d03940caec8ec33505a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>list_append</b> (<a class="el" href="structlist__t.html">list_t</a> *list_ptr, int val)</td></tr>
+<tr class="memitem:adc3eddaf4e8e5d03940caec8ec33505a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linked__list_8h.html#adc3eddaf4e8e5d03940caec8ec33505a">list_append</a> (<a class="el" href="structlist__t.html">list_t</a> *list_ptr, int val)</td></tr>
+<tr class="memdesc:adc3eddaf4e8e5d03940caec8ec33505a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an item to the end of the list.  <a href="linked__list_8h.html#adc3eddaf4e8e5d03940caec8ec33505a">More...</a><br /></td></tr>
 <tr class="separator:adc3eddaf4e8e5d03940caec8ec33505a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae217569dce91370a0baa1dd884536f3a"><td class="memItemLeft" align="right" valign="top"><a id="ae217569dce91370a0baa1dd884536f3a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>list_init_from_array</b> (<a class="el" href="structlist__t.html">list_t</a> *list_ptr, int *arr, size_t arr_size)</td></tr>
@@ -121,6 +121,43 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>list_get_size</b> (
 <div class="textblock"><p>A simple implementation of a singly linked list of integers. </p>
 <dl class="section author"><dt>Author</dt><dd>Pedro Arturo Morales Maries </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="adc3eddaf4e8e5d03940caec8ec33505a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc3eddaf4e8e5d03940caec8ec33505a">&#9670;&nbsp;</a></span>list_append()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void list_append </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structlist__t.html">list_t</a> *&#160;</td>
+          <td class="paramname"><em>list_ptr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add an item to the end of the list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list_ptr</td><td>Pointer to the <a class="el" href="structlist__t.html">list_t</a> to be updated. </td></tr>
+    <tr><td class="paramname">val</td><td>Value to be added to the list. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab59346b047e534df51dd14354809b36a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab59346b047e534df51dd14354809b36a">&#9670;&nbsp;</a></span>list_init()</h2>
 
