@@ -4,7 +4,6 @@ branches-ignore:
   - gh-pages
 
 jobs:
-
   unit-tests-linux:
     runs-on: ubuntu-latest
     steps:
@@ -63,3 +62,18 @@ jobs:
       - name: unit tests
         run: make test
         working-directory: ./build
+
+  deploy-docs:
+    if: github.ref == 'refs/heads/master'
+    needs: [unit-tests-linux, unit-tests-macos]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build-docs
+        uses: mattnotmitt/doxygen-action@v1
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
