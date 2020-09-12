@@ -40,6 +40,13 @@ typedef struct {
  * @param list_ptr Pointer to a ::list_t.
  */
 void list_init(list_t* list_ptr);
+
+/**
+ * @brief Add an item to the end of the list.
+ *
+ * @param list_ptr Pointer to the ::list_t to be updated.
+ * @param val Value to be added to the list.
+ */
 void list_append(list_t* list_ptr, int val);
 void list_init_from_array(list_t* list_ptr, int *arr, size_t arr_size);
 void list_prepend(list_t* list_ptr, int val);
