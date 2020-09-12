@@ -1,6 +1,10 @@
 name: unit-tests
 on: [push, pull_request]
+branches-ignore:
+  - gh-pages
+
 jobs:
+
   unit-tests-linux:
     runs-on: ubuntu-latest
     steps:
@@ -8,6 +12,7 @@ jobs:
         run: |
          sudo apt-get -qq update
          sudo apt-get install -y build-essential cmake
+
       - name: install libcheck
         run: |
          git clone https://github.com/libcheck/check.git --branch 0.15.2 && cd check
@@ -16,15 +21,20 @@ jobs:
          make && sudo make install
          sudo ldconfig
          cd .. && rm -rf check
+
       - uses: actions/checkout@v2
+
       - name: versions info
         run: |
           cmake --version
+
       - name: create configs
         run: mkdir build && cd build && cmake ..
+
       - name: make
         run: make
         working-directory: ./build
+
       - name: unit tests
         run: make test
         working-directory: ./build
@@ -34,17 +44,22 @@ jobs:
     steps:
       - name: install requirements
         run: brew install pkg-config check
+
       - uses: actions/checkout@v2
+
       - name: versions info
         run: |
          cmake --version
          brew info check
          brew info pkg-config
+
       - name: create configs
         run: mkdir build && cd build && cmake ..
+
       - name: make
         run: make
         working-directory: ./build
+
       - name: unit tests
         run: make test
         working-directory: ./build
