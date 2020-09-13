@@ -40,3 +40,4 @@ WORKDIR /pkg/build
 RUN cmake ..
 RUN make
 RUN make test
+RUN make install
